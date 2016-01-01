@@ -1624,7 +1624,7 @@
 
 	body {
 		background-color: #2e3141;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("https://photos-1.dropbox.com/t/2/AABnUzfGHucaNwHrdAUj0PprPkoL0nYNw8672CQNQVokgQ/12/58928106/jpeg/32x32/1/_/1/2/PART_1451628755889_image000000.jpg/ENa6xi0Y59UaIAIoAg/KelgxSI9HN-ln-7tBce-zJvolY3p_Wk4300K9kJY1u8?size=1280x960&size_mode=3");
 		background-size: auto, cover;
 		background-attachment: fixed, fixed;
 		background-position: center, center;
