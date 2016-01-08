@@ -6,15 +6,20 @@
 -->
 <html>
 	<head>
-		<title>Roxy Chow</title>
+		{% if title %}
+			<title>{{ title }}</title>
+		{% else %}
+			<title>Roxy Chow</title>
+		{% endif %}
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="static/assets/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="static/assets/images/images/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
 
@@ -60,7 +65,7 @@
 						<!-- One -->
 							<section id="mission_statement" class="wrapper spotlight style1">
 								<div class="inner">
-									<a class="image"><img src="images/photo-1428506776091-e3a0aea318a9.jpeg" alt="" /></a>
+									<a class="image"><img src="static/images/photo-1428506776091-e3a0aea318a9.jpeg" alt="" /></a>
 									<div class="content">
 										<h2 class="major">Our Mission Statement</h2>
 										<p>We want to make the best quality food we can for the dogs that we love. This means our food is fresh, non-processed, and made with the highest quality ingredients available. Through simple ingrediants and simple cooking we create a wholesome and nutritious meal high in fiber and protein with a low glycemic index that your dog is sure to love.</p>
@@ -72,7 +77,7 @@
 						<!-- Two -->
 							<section id="our_story" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a class="image"><img src="images/roxy_pillows.jpg" alt="" /></a>
+									<a class="image"><img src="static/images/roxy_pillows.jpg" alt="" /></a>
 									<div class="content">
 										<h2 class="major">Our Story</h2>
 										<p>Tricia do this part!!!</p>
@@ -84,7 +89,7 @@
 						<!-- Three -->
 							<section id="our_product" class="wrapper spotlight style3">
 								<div class="inner">
-									<a class="image"><img src="images/photo-1443750200537-00fd518bdc82.jpeg" alt="" /></a>
+									<a class="image"><img src="static/images/photo-1443750200537-00fd518bdc82.jpeg" alt="" /></a>
 									<div class="content">
 										<h2 class="major">Our Product</h2>
 										<p>Simple is the name of the game, Roxy Chow is made from fresh chicken, wholesome barley, and nutritious broccoli, <strong>that's it!</strong> Roxy Chow is high in fiber so it's sure to keep your dog satiated all day, non-processed for a back-to-nature taste, and is specially formulated with a low glycemic index to keep diabetic pups happy and healthy. Roxanne can't get enough of her favorite food!</p>
@@ -95,7 +100,7 @@
 
 							<section id="shipping" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a class="image"><img src="images/pups.jpeg" alt="" /></a>
+									<a class="image"><img src="static/images/pups.jpeg" alt="" /></a>
 									<div class="content">
 										<h2 class="major">Shipping</h2>
 										<p>Roxy Chow is a small business founded by proud Santa Monica locals, and during this growing period we are delivering to Santa Monica, Venice, Malibu, Pacific Palisades, and Brentwood. If you'd like us to deliver to your neighborhood, send us an email and let us know!</p>
@@ -107,7 +112,7 @@
 						<!-- Four -->
 							<section id="how_to_order" class="wrapper spotlight style3">
 								<div class="inner">
-									<a class="image"><img src="images/photo-1424709746721-b8fd0ff52499.jpeg" alt="" /></a>
+									<a class="image"><img src="static/images/photo-1424709746721-b8fd0ff52499.jpeg" alt="" /></a>
 									<div class="content">
 										<h2 class="major">How to Order</h2>
 										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
@@ -122,38 +127,27 @@
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
+							<p>If you have any questions, comments, or would just like to let us know what you think, please don't hesitate to get in touch! We'd love to know about your experience with our product from the moment you ordered it until the last bite is gone!</p>
+							<form method="POST" action="#">
+                                {{ form.hidden_tag() }}
 								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
+									<label for="name">{{ form.name.label }}</label>
+									<div>{{ form.name() }}</div>
 								</div>
 								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" />
+									<label for="email">{{ form.email.label }}</label>
+									<div>{{ form.email() }}</div>
 								</div>
 								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="4"></textarea>
+									<label for="message">{{ form.message.label }}</label>
+									<div>{{ form.message() }}</div>
 								</div>
 								<ul class="actions">
 									<li><input type="submit" value="Send Message" /></li>
 								</ul>
 							</form>
-							<ul class="contact">
-								<li class="fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="fa-phone">(000) 000-0000</li>
-								<li class="fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="fa-facebook"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
 							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Kuhl Technologies & Consulting, LLC All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</section>
@@ -161,12 +155,12 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/util.js"></script>
+			<script src="static/assets/js/skel.min.js"></script>
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="static/assets/js/main.js"></script>
 
 	</body>
 </html>
